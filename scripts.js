@@ -488,3 +488,18 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Update now time every second
     setInterval(updateTimeDisplays, 1000);
 });
+
+async function getInternetTime() {
+    try {
+        const response = await fetch('https://timeapi.io/api/time/current/zone?timeZone=Asia%2FSeoul');
+        if (!response.ok) {
+            throw new Error(`HTTP Error: ${response.status}`);
+        }
+        const data = await response.json();
+        return new Date(data.datetime);
+    } catch (error) {
+        console.error("Failed to fetch internet time. Using system time instead.", error);
+        return new Date(); // 인터넷 시간이 불가능할 경우 시스템 시간 반환
+    }
+});
+
