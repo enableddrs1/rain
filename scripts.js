@@ -491,7 +491,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 async function getInternetTime() {
     try {
-        const response = await fetch('https://timeapi.io/api/time/current/zone?timeZone=Asia%2FSeoul');
+        const response = await fetch('https://timeapi.io/api/time/current/zone?timeZone=Asia/Seoul');
         if (!response.ok) {
             throw new Error(`HTTP Error: ${response.status}`);
         }
