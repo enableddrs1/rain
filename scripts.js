@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     let radParam = localStorage.getItem('rad');
 
     async function getInternetTime() {
-        const response = await fetch('https://timeapi.io/api/time/current/zone?timeZone=Asia%2FSeoul');
+        const response = await fetch('https://timeapi.io/api/time/current/zone?timeZone=Asia/Seoul');
         const data = await response.json();
         return new Date(data.datetime);
     }
